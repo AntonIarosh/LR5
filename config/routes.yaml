@@ -1,3 +1,44 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+GetPublishingController:
+    path:       /publishinghouse
+    controller: App\Controller\PublishingController::publishing
+    methods:    GET
+
+GetStyleController:
+    path:       /style
+    controller: App\Controller\StyleController::style
+    methods:    GET
+
+PostAuthorController:
+    path: /author
+    controller: App\Controller\AuthorController::getAuthor
+    requirements:
+      _method: POST
+
+PostBascetController:
+    path: /basket
+    controller: App\Controller\BascetController::getBasket
+    requirements:
+      _method: POST
+
+PostRegistrationController:
+    path: /registration
+    controller: App\Controller\RegistrationController::Register
+    requirements:
+      _method: POST
+
+PostStyleBookController:
+    path: /stylebook
+    controller: App\Controller\StyleBookController::gerStyleBook
+    requirements:
+      _method: POST
+
+PostPublishingBookController:
+    path: /publishingbook
+    controller: App\Controller\PublishingBookController::getPublishingBook
+    requirements:
+      _method: POST
