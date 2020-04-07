@@ -14,13 +14,13 @@ GetStyleController:
     methods:    GET
 
 PostAuthorController:
-    path: /author
+    path: /author/{id}
     controller: App\Controller\AuthorController::getAuthor
     requirements:
       _method: POST
 
 PostBascetController:
-    path: /basket
+    path: /basket/{id}
     controller: App\Controller\BascetController::getBasket
     requirements:
       _method: POST
@@ -32,13 +32,13 @@ PostRegistrationController:
       _method: POST
 
 PostStyleBookController:
-    path: /stylebook
+    path: /stylebook/{id}
     controller: App\Controller\StyleBookController::gerStyleBook
     requirements:
       _method: POST
 
 PostPublishingBookController:
-    path: /publishingbook
+    path: /publishingbook/{id}
     controller: App\Controller\PublishingBookController::getPublishingBook
     requirements:
       _method: POST

@@ -2,18 +2,18 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class PublishingController
+class PublishingController extends AbstractController
 {
     public function publishing()
     {
-      return new Response(
-          '<html><body><h1><b>Код издательства</b></h1>
-             <b>ID</b>: 3 <br/>
-             <b>Название</b>: Название <br/>
-           </body></html>'
-       ); 
-	 //  return $this->json(['id' => $id],['name' => $name]);
+		$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		substr(str_shuffle($permitted_chars), 0, 16);
+	    $number = rand();
+        return $this->json(['id' => $number,'Publishing House' => substr(str_shuffle($permitted_chars), 0, 16)]);
     }
 }
+
+
  ?>

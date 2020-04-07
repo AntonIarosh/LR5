@@ -7,11 +7,8 @@
 	"item": [
 		{
 			"name": "http://127.0.0.1:8000/registration",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -35,19 +32,16 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8000/publishinghouse",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "http://127.0.0.1:8000/stylebook/{20}",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/publishinghouse",
+					"raw": "http://127.0.0.1:8000/stylebook/{20}",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -57,7 +51,89 @@
 					],
 					"port": "8000",
 					"path": [
-						"publishinghouse"
+						"stylebook",
+						"{20}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/publishingbook/{20}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/publishingbook/{20}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"publishingbook",
+						"{20}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/author/{20}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/author/{20}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"author",
+						"{20}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/basket/{20}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/basket/{20}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"basket",
+						"{20}"
 					]
 				}
 			},
@@ -93,7 +169,7 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8000/publishingbook",
+			"name": "http://127.0.0.1:8000/publishinghouse",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -105,7 +181,7 @@
 					"raw": "{"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/publishingbook",
+					"raw": "http://127.0.0.1:8000/publishinghouse",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -115,94 +191,7 @@
 					],
 					"port": "8000",
 					"path": [
-						"publishingbook"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://127.0.0.1:8000/stylebook",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{"
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/stylebook",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"stylebook"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://127.0.0.1:8000/basket",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{"
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/basket",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"basket"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://127.0.0.1:8000/author",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{"
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/author",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"author"
+						"publishinghouse"
 					]
 				}
 			},

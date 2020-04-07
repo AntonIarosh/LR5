@@ -2,23 +2,31 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-
-class BascetController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+class BascetController extends AbstractController
 {
 
-    public function getBasket()
+    public function getBasket($id)
     {
-        return new Response(
-           '<html><body><h1><b> 20 </b></h1>
-             <b>ID пользователя</b>: 21 <br/>
-			 <b>ID книги </b>: 22 <br/>
-			 <b>ID аудио Книга </b>: 23 <br/>
-             <b> Общая стоимость </b>: 24  <br/>
-			 <b> Количество книг </b>: 25 <br/>
-			 <b>Дата</b>: За царя гороха <br/>
-             <b>Цена</b>: Бесценная  <br/>
-           </body></html>'
-       );
+	   	$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		substr(str_shuffle($permitted_chars), 0, 16);
+	    $id_publishhouse = rand();
+		
+		$prace = rand();
+		$id_book = rand();
+		
+		$id_audio_dook = rand();
+		$total_cost = rand();
+		$number = rand();
+        return $this->json(['Name_author' =>  substr(str_shuffle($permitted_chars), 0, 16) ,
+			'Id' => $id,
+			'Id book' => $id_book,
+			'Id audio dook' => $id_audio_dook, 
+			'Total_book_cost' => $total_cost, 
+			'Number_of_books' => $number,
+			'Date' => '06.12.2020', 
+			'Price' => $prace
+		]);
     }
 }
  ?>

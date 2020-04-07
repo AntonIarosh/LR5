@@ -2,18 +2,19 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-
-class StyleBookController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+class StyleBookController extends AbstractController
 {
 
-    public function gerStyleBook()
+    public function gerStyleBook($id)
     {
-        return new Response(
-           '<html><body><h1> Айди жанра <b> 4 </b></h1>
-             <b>Название</b>: Название <br/>
-			 <b>Айди родительского жанра </b>: 41<br/>
-           </body></html>'
-       );
+		$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		substr(str_shuffle($permitted_chars), 0, 16);
+	    $id_paren_genre = rand();;
+	    return $this->json(['Id_genre' => $id,
+			'Name' => substr(str_shuffle($permitted_chars), 0, 16),
+			'Id paren genre' => $id_paren_genre,
+		]);
     }
 }
  ?>

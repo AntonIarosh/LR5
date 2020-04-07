@@ -2,24 +2,29 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-
-class AuthorController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+class AuthorController  extends AbstractController
 {
 
-    public function getAuthor()
+    public function getAuthor($id)
     {
-        return new Response(
-           '<html><body><h1><b>Иванов Ивано Иванович</b></h1>
-             <b>ID</b>: 12<br/>
-			 <b>ID автора </b>: 13 <br/>
-			 <b>ID Жанра </b>: 14 <br/>
-             <b> Название </b>: Горе от ума <br/>
-			 <b>ID издательства </b>: 15 <br/>
-             <b>Дата издания</b>: За царя гороха <br/>
-             <b>Тип обложки</b>: Не виданная <br/>
-             <b>Цена</b>: Бесценная  <br/>
-           </body></html>'
-       );
+	   	$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		substr(str_shuffle($permitted_chars), 0, 16);
+	    $id_publishhouse = rand();
+		$id_author = rand();
+		$id_user = rand();
+		$id_user = rand();
+		$id_genre = rand();
+		$prace = rand();
+        return $this->json(['Name_author' =>  substr(str_shuffle($permitted_chars), 0, 16) ,
+			'Id' => $id,
+			'Id_author' => $id_author,'Id_genre' => $id_genre, 'book_name' => substr(str_shuffle($permitted_chars),0, 16),
+			'Id_publishhouse' => $id_publishhouse, 
+			'Date_of_publish' => '06/12/2020', 
+			'Type_of_cover_art' => $id_genre, 
+			'book_name' => substr(str_shuffle($permitted_chars),0, 16),
+			'Price' => $prace
+		]);
     }
 }
  ?>

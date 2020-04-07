@@ -2,20 +2,18 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class StyleController
+class StyleController extends AbstractController
 {
     public function style()
     {
-		return new Response(
+		$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-           '<html><body><h1><b>Код жанра</b></h1>
-             <b>ID</b>: 50 <br/>
-             <b>Название</b>: Название <br/>
-			 <b>Родительский жанр</b>: 51 <br/>
-           </body></html>'
-       );
-	   return $this->json(['id' => $id],['name' => $name],['Parent_id' => $Parent_id]);
-    }
+		substr(str_shuffle($permitted_chars), 0, 16);
+		
+	    $number = rand();
+        return $this->json(['id_Style' => $number , 'Style' => substr(str_shuffle($permitted_chars), 0, 16)]);
+	}
 }
  ?>
