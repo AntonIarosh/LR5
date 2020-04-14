@@ -10,35 +10,35 @@ GetPublishingController:
 
 GetStyleController:
     path:       /style
-    controller: App\Controller\StyleController::style
+    controller: App\Controller\StyleController::show
     methods:    GET
 
 PostAuthorController:
-    path: /author/{id}
-    controller: App\Controller\AuthorController::getAuthor
+    path: /author/{id_book}
+    controller: App\Controller\AuthorController::show
     requirements:
       _method: POST
 
 PostBascetController:
-    path: /basket/{id}
-    controller: App\Controller\BascetController::getBasket
+    path: /basket/{id_bascet}
+    controller: App\Controller\BascetController::show
     requirements:
       _method: POST
 
 PostRegistrationController:
     path: /registration
-    controller: App\Controller\RegistrationController::Register
+    controller: App\Controller\RegistrationController::create
     requirements:
       _method: POST
 
 PostStyleBookController:
-    path: /stylebook/{id}
-    controller: App\Controller\StyleBookController::gerStyleBook
+    path: /stylebook/{id_genre}
+    controller: App\Controller\StyleBookController::show
     requirements:
       _method: POST
 
 PostPublishingBookController:
-    path: /publishingbook/{id}
-    controller: App\Controller\PublishingBookController::getPublishingBook
+    path: /publishingbook/{id_publishing_house}
+    controller: App\Controller\PublishingBookController::show
     requirements:
       _method: POST
